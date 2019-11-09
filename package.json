@@ -1,0 +1,30 @@
+{
+  "name": "plotout",
+  "version": "1.0.0",
+  "description": "please see the repo and readme files",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinapan/plotout.git"
+  },
+  "keywords": [
+    "visualize",
+    "graph",
+    "plot",
+    "webapp"
+  ],
+  "author": "the plotout team",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/sinapan/plotout/issues"
+  },
+  "homepage": "https://github.com/sinapan/plotout#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
