@@ -1,52 +1,41 @@
+<script>
+  import PieGChart from "../components/plots/pie_gcharts.svelte";
+  import ScatterGChart from "../components/plots/scatter_gcharts.svelte";
+  import WordTreeGChart from "../components/plots/wordtree_gcharts.svelte";
+</script>
+
 <style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
+  .container {
+    display: flex;
   }
 
-  h1 {
-    font-size: 2.8em;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 0.5em 0;
+  .column {
+    flex: 1;
+    /*for demo purposes only */
+    background: #f2f2f2;
+    border: 1px solid #e6e6e6;
+    box-sizing: border-box;
   }
 
-  figure {
-    margin: 0 0 1em 0;
+  .column-one {
+    order: 1;
   }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
+  .column-two {
+    order: 2;
   }
-
-  p {
-    margin: 1em auto;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 4em;
-    }
+  .column-three {
+    order: 3;
   }
 </style>
 
-<svelte:head>
-  <title>Sapper project template</title>
-</svelte:head>
-
-<h1>Great success!</h1>
-
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
+<div class="container">
+  <div class="column column-one">
+    <PieGChart />
+  </div>
+  <div class="column column-two">
+    <ScatterGChart />
+  </div>
+  <div class="column column-three">
+    <WordTreeGChart />
+  </div>
+</div>
