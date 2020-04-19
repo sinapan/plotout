@@ -1,4 +1,5 @@
 <script>
+  import { selected_chart } from "../components/plots/stores.js";
   import SelectionMenu from "../components/plots/selection_menu.svelte";
   import PieGChart from "../components/plots/pie_gcharts.svelte";
   import ScatterGChart from "../components/plots/scatter_gcharts.svelte";
@@ -23,13 +24,17 @@
   <div class="row">
     <SelectionMenu />
   </div>
-  <div class="row">
-    <PieGChart />
-  </div>
-  <div class="row">
-    <ScatterGChart />
-  </div>
-  <div class="row">
-    <WordTreeGChart />
-  </div>
+  {#if $selected_chart == 'scatter'}
+    <div class="row">
+      <ScatterGChart />
+    </div>
+  {:else if $selected_chart == 'line'}
+    <div class="row">
+      <ScatterGChart />
+    </div>
+  {:else if $selected_chart == 'curve'}
+    <div class="row">
+      <ScatterGChart />
+    </div>
+  {/if}
 </div>
