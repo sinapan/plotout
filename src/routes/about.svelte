@@ -1,8 +1,4 @@
-<svelte:head>
-  <title>About</title>
-</svelte:head>
-
-<h1>Plotout</h1>
+<h1>The Plotout Project</h1>
 
 <p>A web app that makes data visualization extremely fast and easy.</p>
 

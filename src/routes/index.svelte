@@ -1,4 +1,5 @@
 <script>
+  import SelectionMenu from "../components/plots/selection_menu.svelte";
   import PieGChart from "../components/plots/pie_gcharts.svelte";
   import ScatterGChart from "../components/plots/scatter_gcharts.svelte";
   import WordTreeGChart from "../components/plots/wordtree_gcharts.svelte";
@@ -7,35 +8,28 @@
 <style>
   .container {
     display: flex;
+    flex-direction: column;
   }
 
-  .column {
+  .row {
     flex: 1;
-    /*for demo purposes only */
     background: #f2f2f2;
     border: 1px solid #e6e6e6;
     box-sizing: border-box;
   }
-
-  .column-one {
-    order: 1;
-  }
-  .column-two {
-    order: 2;
-  }
-  .column-three {
-    order: 3;
-  }
 </style>
 
 <div class="container">
-  <div class="column column-one">
+  <div class="row">
+    <SelectionMenu />
+  </div>
+  <div class="row">
     <PieGChart />
   </div>
-  <div class="column column-two">
+  <div class="row">
     <ScatterGChart />
   </div>
-  <div class="column column-three">
+  <div class="row">
     <WordTreeGChart />
   </div>
 </div>
