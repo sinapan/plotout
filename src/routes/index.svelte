@@ -30,11 +30,11 @@
     </div>
   {:else if $selected_chart == 'line'}
     <div class="row">
-      <ScatterGChart />
+      <PieGChart />
     </div>
   {:else if $selected_chart == 'curve'}
     <div class="row">
-      <ScatterGChart />
+      <WordTreeGChart />
     </div>
   {/if}
 </div>

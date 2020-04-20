@@ -1,4 +1,5 @@
 <script type="text/javascript">
+  // import { sample_data } from "./sample_data.js";
   import { onMount } from "svelte";
   let googleChartsReady = false;
   let mounted = false;
@@ -21,37 +22,47 @@
     // Load the Visualization API and the corechart package.
     google.charts.load("current", { packages: ["corechart"] });
     // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawFromSheet);
   }
 
   // Callback that creates and populates a data table,
   // instantiates the pie chart, passes in the data and
   // draws it.
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ["Age", "Weight"],
-      [8, 12],
-      [4, 5.5],
-      [11, 14],
-      [4, 5],
-      [3, 3.5],
-      [6.5, 7]
-    ]);
+  function drawFromSheet() {
+    let queryString = encodeURIComponent("SELECT A, B");
+    let iris_dataset_URL =
+      "https://docs.google.com/spreadsheets/d/1yPpCNkZdLZkK2Sgh-zh6xcR5W8KuBALzAO4rkrkmW5M/edit?usp=sharing";
+    let query = new google.visualization.Query(
+      iris_dataset_URL + "/gviz/tq?sheet=Sheet1&headers=1&tq=" + queryString
+    );
+    query.send(drawChart); //(handleDataQueryResponse);
+  }
 
-    var options = {
-      title: "Age vs. Weight comparison",
-      hAxis: { title: "Age", minValue: 0, maxValue: 15 },
-      vAxis: { title: "Weight", minValue: 0, maxValue: 15 },
+  function drawChart(response) {
+    if (response.isError()) {
+      console.log(
+        "Error in query: " +
+          response.getMessage() +
+          " " +
+          response.getDetailedMessage()
+      );
+      return;
+    }
+    let data = response.getDataTable();
+    let options = {
+      title: "Iris Dataset",
+      hAxis: { title: "X" },
+      vAxis: { title: "Y" },
       legend: "none"
     };
-
-    var chart = new google.visualization.ScatterChart(
+    let chart = new google.visualization.ScatterChart(
       document.getElementById("ScatterGChart")
     );
     chart.draw(data, options);
   }
+  // auto window resizing
   function resize() {
-    setTimeout(() => drawChart(), 500);
+    setTimeout(() => drawFromSheet(), 500);
   }
 </script>
 
