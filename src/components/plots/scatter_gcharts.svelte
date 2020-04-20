@@ -29,16 +29,17 @@
   // instantiates the pie chart, passes in the data and
   // draws it.
   function drawFromSheet() {
-    let queryString = encodeURIComponent("SELECT A, B");
+    let queryString = encodeURIComponent("SELECT A, C");
     let iris_dataset_URL =
       "https://docs.google.com/spreadsheets/d/1yPpCNkZdLZkK2Sgh-zh6xcR5W8KuBALzAO4rkrkmW5M/edit?usp=sharing";
     let query = new google.visualization.Query(
       iris_dataset_URL + "/gviz/tq?sheet=Sheet1&headers=1&tq=" + queryString
     );
-    query.send(drawChart); //(handleDataQueryResponse);
+    query.send(handleDataQueryResponse);
   }
 
-  function drawChart(response) {
+  let data;
+  function handleDataQueryResponse(response) {
     if (response.isError()) {
       console.log(
         "Error in query: " +
@@ -48,12 +49,16 @@
       );
       return;
     }
-    let data = response.getDataTable();
+    data = response.getDataTable();
+    drawChart(data);
+  }
+  function drawChart(data) {
+    console.log(data);
     let options = {
       title: "Iris Dataset",
       hAxis: { title: "X" },
       vAxis: { title: "Y" },
-      legend: "none"
+      legend: "none" //{ position: "top", textStyle: { color: "blue", fontSize: 16 } }
     };
     let chart = new google.visualization.ScatterChart(
       document.getElementById("ScatterGChart")
@@ -62,7 +67,7 @@
   }
   // auto window resizing
   function resize() {
-    setTimeout(() => drawFromSheet(), 500);
+    setTimeout(() => drawChart(data), 500);
   }
 </script>
 
