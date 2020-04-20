@@ -13,10 +13,12 @@
     id="scatter"
     class="button is-selected is-success"
     on:click={handleClick}>
-    Scatter
+    Scatter Plot
   </button>
-  <button id="line" class="button is-info" on:click={handleClick}>Line</button>
-  <button id="curve" class="button is-info" on:click={handleClick}>
-    Curve
+  <button id="pie" class="button is-info" on:click={handleClick}>
+    Pie Chart
+  </button>
+  <button id="wordtree" class="button is-info" on:click={handleClick}>
+    Word Tree Chart
   </button>
 </div>

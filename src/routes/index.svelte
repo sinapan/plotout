@@ -28,11 +28,11 @@
     <div class="row">
       <ScatterGChart />
     </div>
-  {:else if $selected_chart == 'line'}
+  {:else if $selected_chart == 'pie'}
     <div class="row">
       <PieGChart />
     </div>
-  {:else if $selected_chart == 'curve'}
+  {:else if $selected_chart == 'wordtree'}
     <div class="row">
       <WordTreeGChart />
     </div>
