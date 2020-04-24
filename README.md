@@ -10,7 +10,7 @@ The [GraphBuilder](https://www.jmp.com/en_ch/events/ondemand/mastering-jmp/basic
 - It will support "big data".
 
 You are excited and wanna knonw where to begin? Move to the next section.
-[Please keep in mind that we just started and have not reached the Alpha version yet, so there is a ton of work that still needs to be done.]
+[Please keep in mind that we are just getting started and have not reached the Alpha version yet.]
 
 ## Getting started
 
