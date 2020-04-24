@@ -34,12 +34,18 @@ Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
 ## Roadmap
 
-Here is where we are headed:
+###Short Term
 
-- Adding support multiple javascript charting libraries (i.e. Plotly, Google charts, Charts.js and D3)
-- Adding support for loading data to memory for visualizations so that the data would never leave the user's device.
-- Adding support for multiple data sources (i.e. MongoDB, Google Sheets, BigQuery and Redshift)
-- Adding a blog for everyone to share interesting visualization
+- Add line and density charts
+- Add the ability for the user to upload a csv
+- Add the ability for the user to pick columns to visualize
+
+###Long Term
+
+- Add support for multiple javascript charting libraries (i.e. Plotly, Google charts, Charts.js and D3)
+- Add support for loading data to memory for visualizations so that the data would never leave the user's device.
+- Add support for multiple data sources (i.e. MongoDB, Google Sheets, BigQuery and Redshift)
+- Add a blog for everyone to share interesting visualization
 
 ## Bugs and feedback
 
