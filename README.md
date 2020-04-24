@@ -34,13 +34,13 @@ Consult [sapper.svelte.dev](https://sapper.svelte.dev) for help getting started.
 
 ## Roadmap
 
-###Short Term
+### Short Term
 
 - Add line and density charts
 - Add the ability for the user to upload a csv
 - Add the ability for the user to pick columns to visualize
 
-###Long Term
+### Long Term
 
 - Add support for multiple javascript charting libraries (i.e. Plotly, Google charts, Charts.js and D3)
 - Add support for loading data to memory for visualizations so that the data would never leave the user's device.
